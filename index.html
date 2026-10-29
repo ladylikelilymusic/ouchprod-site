@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OUCH PROD · Créer, produire, accompagner · Côtes-d'Armor</title>
+<meta name="description" content="OUCH PROD, association basée à Plédran (Côtes-d'Armor) : spectacle vivant, label jeune public Minouch, médiation culturelle, expositions et réalisation audiovisuelle.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+:root {
+  --nuit:#15121e; --encre:#231f20; --doux:#4a4560; --papier:#ffffff; --creme:#ffffff;
+  --ligne:rgba(29,24,48,.12);
+  --logo:#231f20; --rose:#231f20; --orange:#231f20; --jaune:#231f20; --turquoise:#231f20; --bleu:#231f20; --vert:#231f20;
+  --serif:'Playfair Display',Georgia,serif; --sans:'DM Sans',system-ui,sans-serif;
+}
+html { scroll-behavior:smooth; scroll-padding-top:70px; }
+body { background:var(--papier); color:var(--encre); font-family:var(--sans); font-weight:300; line-height:1.7; -webkit-font-smoothing:antialiased; }
+a { color:inherit; }
+img { max-width:100%; display:block; }
+
+/* NAV */
+.nav { position:sticky; top:0; z-index:20; background:rgba(255,253,248,.94); backdrop-filter:blur(8px); border-bottom:1px solid var(--ligne); }
+.nav-inner { max-width:1100px; margin:0 auto; padding:.7rem 1.25rem; display:flex; gap:1.3rem; align-items:center; overflow-x:auto; white-space:nowrap; scrollbar-width:none; }
+.nav-inner::-webkit-scrollbar { display:none; }
+.logo { font-family:var(--serif); font-weight:700; font-size:1.15rem; letter-spacing:.04em; text-decoration:none; margin-right:auto; }
+.nav a:not(.logo) { font-size:13px; font-weight:500; letter-spacing:.03em; text-decoration:none; color:var(--doux); }
+.nav a:not(.logo):hover { color:var(--encre); }
+.nav a.cta { color:#fff; background:var(--rose); padding:6px 14px; border-radius:100px; }
+
+/* HERO */
+.logo-top { width:min(380px,70%); height:auto; margin:0 auto 2.5rem; display:block; }
+.hero-inner { text-align:center; }
+.hero .pills { justify-content:center; }
+.hero p.lead { margin-left:auto; margin-right:auto; }
+.hero { position:relative; background:#fff; color:var(--encre); padding:3rem 1.25rem 4rem; border-bottom:6px solid var(--rose); }
+.hero-inner { position:relative; z-index:2; max-width:1100px; margin:0 auto; }
+.eyebrow { font-size:12px; font-weight:600; letter-spacing:3px; text-transform:uppercase; color:var(--doux); margin-bottom:1rem; }
+.hero h1 { font-family:var(--serif); font-weight:700; font-size:clamp(2.6rem,8vw,5.2rem); line-height:1.02; letter-spacing:.01em; }
+.hero h1 span { color:var(--logo); }
+.hero p.lead { font-family:var(--serif); font-size:clamp(1.1rem,2.6vw,1.45rem); max-width:36ch; margin:1.4rem auto 2rem; color:var(--encre); }
+.pills { display:flex; gap:8px; flex-wrap:wrap; }
+.pills a { padding:8px 18px; border:2px solid var(--encre); border-radius:100px; font-size:14px; font-weight:500; text-decoration:none; background:#fff; }
+.pills a:hover { background:var(--encre); color:#fff; }
+
+/* SECTIONS */
+section { padding:5rem 1.25rem; }
+.wrap { max-width:1100px; margin:0 auto; }
+.kicker { font-size:11px; font-weight:600; letter-spacing:3px; text-transform:uppercase; color:var(--c,var(--rose)); margin-bottom:.6rem; }
+h2 { font-family:var(--serif); font-weight:700; font-size:clamp(1.9rem,4.5vw,2.8rem); line-height:1.12; margin-bottom:1.1rem; }
+h3 { font-family:var(--serif); font-weight:500; font-size:1.6rem; margin-bottom:.4rem; }
+.intro { max-width:62ch; font-size:1.06rem; margin-bottom:2.2rem; }
+.alt { background:#fff; border-top:1px solid var(--ligne); }
+body { font-size:17.5px; font-weight:400; color:#231f20; }
+.intro, .card p, .place span { color:#231f20; }
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:2.2rem 2rem; }
+.card { background:none; border:0; border-radius:0; padding:0; }
+.card h3 { font-weight:700; font-size:2.4rem; line-height:1.15; }
+#minouch .card h3 { font-size:1.7rem; }
+#presentation .card h3 { font-size:1.6rem; }
+.card small { display:block; color:var(--doux); font-size:14px; margin-bottom:.5rem; }
+.card p { font-size:1.05rem; }
+.card img { width:100%; max-width:none; margin:0 0 1rem; aspect-ratio:1/1; object-fit:cover; border-radius:14px; }
+.card img.wide { aspect-ratio:16/9; }
+.banner { max-width:1100px; margin:0 auto; padding:2rem 1.25rem 0; }
+.strips { display:flex; gap:1.2%; aspect-ratio:3.2; }
+.strip { overflow:hidden; border-radius:12px; border:1px solid var(--ligne); }
+.strip img { display:block; width:100%; height:auto; max-width:none; border-radius:0; border:0; animation:upDown ease-in-out infinite alternate; }
+@keyframes upDown { from { transform:translateY(0); } to { transform:translateY(-12%); } }
+@media (prefers-reduced-motion: reduce) { .strip img { animation:none; } }
+
+.bigphoto { margin:0 0 2rem; }
+.bigphoto img { width:100%; max-height:70vh; object-fit:cover; border-radius:18px; }
+.bigphoto figcaption { font-size:13px; color:var(--doux); margin-top:.4rem; text-align:right; }
+.photos { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1.25rem; margin-top:1.5rem; }
+.photos img { width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:14px; border:1px solid var(--ligne); }
+.tag { display:inline-block; font-size:11.5px; font-weight:500; padding:3px 11px; border-radius:100px; background:rgba(29,24,48,.06); margin:.5rem .35rem 0 0; }
+
+/* chiffres */
+.stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:1rem; margin:1.8rem 0 0; }
+.stat { text-align:left; border:0; padding:0; }
+.keyfig { font-family:var(--serif); font-size:2.2rem; font-weight:700; line-height:1.15; margin:1.8rem 0 .6rem; }
+.stat b { display:block; font-family:var(--serif); font-size:1.5rem; line-height:1.1; }
+.stat span { font-size:13px; color:var(--doux); }
+
+/* timeline */
+.timeline { list-style:none; border-left:2px solid var(--ligne); margin-left:6px; }
+.timeline li { position:relative; padding:0 0 1.6rem 1.6rem; }
+.timeline li::before { content:''; position:absolute; left:-8px; top:.45rem; width:14px; height:14px; border-radius:50%; background:var(--c,var(--rose)); border:3px solid var(--papier); }
+.proj { display:block; margin-bottom:.25rem; }
+.timeline b { font-family:var(--serif); font-size:1.15rem; display:block; }
+
+/* quotes */
+.quote { font-family:var(--serif); font-size:1.1rem; border-left:4px solid var(--c,var(--jaune)); padding:.2rem 0 .2rem 1rem; margin:0 0 1rem; }
+.quote cite { display:block; font-family:var(--sans); font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--doux); margin-top:.3rem; }
+
+/* territoire */
+.places { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:.9rem; margin-top:1.4rem; }
+.place { padding:1rem 1.1rem; border-radius:14px; background:#fff; border:1px solid var(--ligne); }
+.place b { display:block; font-size:12px; letter-spacing:2px; text-transform:uppercase; color:var(--turquoise); }
+.place span { font-size:.95rem; }
+
+/* contact */
+.contact { background:#fff; border-top:6px solid var(--jaune); }
+.contact .kicker { color:var(--rose); }
+.contact a { text-decoration:none; border-bottom:1px solid var(--encre); }
+footer { text-align:center; font-size:12px; color:var(--doux); padding:1.6rem 1rem 2.2rem; background:var(--papier); }
+@media (max-width:600px) { section { padding:3.5rem 1.1rem; } }
+.video { position:relative; aspect-ratio:16/9; margin:1rem 0 0; max-width:760px; }
+.video iframe { position:absolute; inset:0; width:100%; height:100%; border:0; border-radius:14px; }
+.vthumb { display:block; position:relative; aspect-ratio:16/9; max-width:760px; margin:1rem 0 0; border-radius:14px; background:#231f20 center/cover no-repeat; overflow:hidden; }
+.vthumb .play { position:absolute; left:50%; top:50%; width:72px; height:72px; margin:-36px 0 0 -36px; border-radius:50%; background:rgba(255,255,255,.92); box-shadow:0 2px 12px rgba(0,0,0,.35); }
+.vthumb .play::after { content:''; position:absolute; left:28px; top:20px; border-style:solid; border-width:16px 0 16px 26px; border-color:transparent transparent transparent #231f20; }
+.vthumb:hover .play { transform:scale(1.08); }
+/* ronds flottants (derrière le contenu) */
+body > :not(.bubbles):not(.follower):not(script):not(style):not(nav) { position:relative; z-index:1; }
+
+.follower { position:fixed; left:0; top:0; z-index:30; pointer-events:none; border-radius:50%; opacity:0; transition:opacity .4s; will-change:transform; }
+
+section, header.hero, footer { position:relative; z-index:1; background:transparent !important; }
+.alt, .contact { background:transparent !important; }
+
+.bubbles { position:fixed; inset:0; z-index:0; pointer-events:none; overflow:hidden; }
+.bubble { position:absolute; border-radius:50%; opacity:.7; animation:drift ease-in-out infinite alternate; will-change:transform; }
+@keyframes drift { from { transform:translate(0,0); } to { transform:translate(var(--dx),var(--dy)); } }
+@media (prefers-reduced-motion: reduce) { .bubble { animation:none; } }
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Sommaire">
+  <div class="nav-inner">
+    <a class="logo" href="#top">OUCH PROD</a>
+    <a href="#spectacle">Spectacle vivant</a>
+    <a href="#minouch">Label Minouch</a>
+    <a href="#mediation">Médiation</a>
+    <a href="#expositions">Expositions</a>
+    <a href="#audiovisuel">Audiovisuel</a>
+    <a href="#teasers">Teasers</a>
+    <a href="#territoire">Territoire</a>
+    <a href="#parcours">Parcours</a>
+    <a class="cta" href="#contact">Contact</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-inner">
+    <img class="logo-top" src="img/logo-ouchprod.png" alt="OUCH PROD">
+    <p class="eyebrow">Association · Plédran · Côtes-d'Armor · depuis 2020</p>
+    <h1>Créer<br>Produire<br>Accompagner</h1>
+    <p class="lead">Spectacles, disques, expositions, ateliers et images : une même structure pour créer, produire et transmettre, avec une attention particulière portée au jeune public.</p>
+    <div class="pills">
+      <a href="#spectacle">Spectacle vivant</a>
+      <a href="#minouch">Label Minouch</a>
+      <a href="#mediation">Médiation culturelle</a>
+      <a href="#expositions">Expositions</a>
+      <a href="#audiovisuel">Audiovisuel</a>
+      <a href="#teasers">Teasers</a>
+    </div>
+  </div>
+</header>
+
+<div class="banner"><div class="strips" role="img" aria-label="OUCH PROD : spectacles, disques, expositions et images"><div class="strip" style="flex:477"><img src="img/bandeau-1.jpg" alt="" loading="lazy" style="animation-duration:9s;animation-delay:0s"></div><div class="strip" style="flex:488"><img src="img/bandeau-2.jpg" alt="" loading="lazy" style="animation-duration:12s;animation-delay:-3s"></div><div class="strip" style="flex:438"><img src="img/bandeau-3.jpg" alt="" loading="lazy" style="animation-duration:10s;animation-delay:-6s"></div><div class="strip" style="flex:495"><img src="img/bandeau-4.jpg" alt="" loading="lazy" style="animation-duration:13s;animation-delay:-2s"></div><div class="strip" style="flex:501"><img src="img/bandeau-5.jpg" alt="" loading="lazy" style="animation-duration:11s;animation-delay:-8s"></div><div class="strip" style="flex:458"><img src="img/bandeau-6.jpg" alt="" loading="lazy" style="animation-duration:14s;animation-delay:-4s"></div><div class="strip" style="flex:458"><img src="img/bandeau-7.jpg" alt="" loading="lazy" style="animation-duration:10s;animation-delay:-1s"></div></div></div>
+
+<!-- PRESENTATION -->
+<section id="presentation">
+  <div class="wrap">
+    <p class="kicker">Qui sommes-nous</p>
+    <h2>Une structure à la croisée du spectacle, de la musique et de l'image</h2>
+    <p class="intro">Créée en 2020 en Bretagne, OUCH PROD est née autour des créations de Ladylike Lily et d'une envie : réunir au sein d'une même structure la création artistique, la production et la transmission. Aujourd'hui, l'association accompagne ses propres créations comme celles d'autres artistes, en développant un travail étroit avec les lieux culturels, les écoles et les acteurs du territoire.</p>
+    <div class="grid" style="grid-template-columns:1fr;gap:1.6rem">
+      <div class="card" style="--c:var(--rose)"><h3>Création &amp; production</h3><p>Spectacles, concerts, disques et projets visuels.</p></div>
+      <div class="card" style="--c:var(--turquoise)"><h3>Musique &amp; image</h3><p>Compositions, productions musicales, vidéos, scénographies.</p></div>
+      <div class="card" style="--c:var(--jaune)"><h3>Médiation &amp; transmission</h3><p>Ateliers, rencontres, projets avec les écoles et les structures culturelles.</p></div>
+      <div class="card" style="--c:var(--orange)"><h3>Accompagnement artistique</h3><p>Soutien à d'autres artistes et à des projets du territoire.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SPECTACLE VIVANT -->
+<section id="spectacle" class="alt" style="--c:var(--rose)">
+  <div class="wrap">
+    <h2>Spectacle vivant</h2>
+    <p class="intro">Produire des créations musicales et visuelles à destination de tous les publics.</p>
+    <div class="grid" style="grid-template-columns:1fr">
+      <figure class="bigphoto">
+      <img src="img/lgo-silhouette.jpg" alt="Affiche des Graines Oubliées : silhouette à la guitare en théâtre d'ombres" loading="lazy">
+    </figure>
+      <div class="card" style="--c:var(--turquoise)">
+        <small>Spectacle &amp; disque · théâtre d'ombres · musique live · vidéo</small>
+        <h3 style="font-size:3.4rem;font-weight:700;line-height:1.1">Les Graines Oubliées</h3>
+        <p>De Ladylike Lily. Un conte initiatique, écologique et poétique autour de l'émancipation et de notre rapport au vivant, mêlant théâtre d'ombres, musique live et arts visuels. Pour le jeune public et les familles.</p>
+        <h4 class="keyfig">Synopsis</h4>
+        <p>Le spectacle raconte l'aventure d'une petite fille, Lily, qui quitte sa ville natale pour sauver sa mère malade. Elle cherche d'abord un remède dans de vieux livres de botanique et d'histoire, mais certaines pages ont été arrachées : sa quête semble perdue. Par une nuit étoilée, un crapaud d'un genre un peu particulier lui révèle un secret : loin de la ville vit une sorcière, grande connaisseuse des plantes, qui pourra peut-être l'aider. Lily se met en route et découvre un monde qui lui était resté caché : un univers sauvage, végétal, merveilleux, qu'on lui avait volontairement dissimulé.</p>
+        <h4 class="keyfig">Note d'intention</h4>
+        <p>Les Graines Oubliées s'inscrit dans la continuité d'ECHOES, la précédente création de Ladylike Lily. Elle y aborde le monde sauvage et la question écologique, et, en écho, la féminité sauvage et le pouvoir féminin que l'on cherche depuis longtemps à étouffer. N'y aurait-il pas un lien entre les deux ? Ces thèmes demandent que l'on y sensibilise sans attendre les jeunes générations, depuis sa position d'artiste, musicienne et plasticienne, sous la forme d'un conte : le parcours initiatique d'une petite Lily.</p>
+        <h4 class="keyfig">Dispositif</h4>
+        <p>Ladylike Lily conte l'histoire en direct : elle chante, joue de la guitare et du clavier, et manipule des ombres sur un écran de 5 x 8 m. Quand elle passe derrière l'écran, dotée d'un masque double-face, elle incarne Lily en ombre de plein-pied. L'écran symbolise la frontière entre le monde « réel », urbanisé, sous contrôle, et celui de la sorcière, libre et sauvage. Huit morceaux originaux, créés pour le spectacle, sont interprétés en direct, avec des nappes de clavier, des arpèges de guitare folk et des mélopées vocales. Le marionnettiste Julien Ravary manipule décors et personnages d'ombre depuis le plateau, sans être vu, et assure les lancements vidéo.</p>
+        <h4 class="keyfig">Distribution</h4>
+        <p><span class="proj"><strong>Musique, images, manipulation d'ombres, jeu :</strong> Orianne Marsilli</span><span class="proj"><strong>Régie, son, lumières, technicien ombres :</strong> Julien Ravary</span><span class="proj"><strong>Mise en scène :</strong> David Lippe</span><span class="proj"><strong>Dramaturge :</strong> Alma Terrasse</span><span class="proj"><strong>Costumes :</strong> Anna Le Reun</span><span class="proj"><strong>Facteur de masque :</strong> Robin Husband</span><span class="proj"><strong>OUCH PROD :</strong> Tiphaine Boquet</span><span class="proj"><strong>Administration :</strong> Caroline Coudert</span><span class="proj"><strong>Diffusion :</strong> Marion Long (Un Deux Un Deux)</span><span class="proj"><strong>Label :</strong> disque-livre produit par le label Minouch</span><span class="proj"><strong>Distributeur :</strong> L'Autre Distribution</span></p>
+        <h4 class="keyfig">Coproductions et soutiens</h4>
+        <p>Création 2023 soutenue en coproduction et en pré-achats par :</p>
+        <p><span class="proj"><strong><a href="https://bonjour-minuit.fr/" target="_blank" rel="noopener">Bonjour Minuit</a> (Saint-Brieuc, 22)</strong></span><span class="proj"><strong><a href="https://www.sew-morlaix.com/" target="_blank" rel="noopener">SEW</a> (Morlaix, 29)</strong></span><span class="proj"><strong><a href="https://www.fuzzyon.com/" target="_blank" rel="noopener">Fuzz'Yon</a> (La Roche-sur-Yon, 85)</strong></span><span class="proj"><strong>Centre culturel de la Ville Robert (Pordic, 22)</strong></span><span class="proj"><strong><a href="https://www.sacem.fr/" target="_blank" rel="noopener">Sacem</a> (Fabrique à musiques)</strong></span><span class="proj"><strong>Saison culturelle Arth Maël / Ploërmel Communauté (56)</strong></span></p>
+        <p><span class="proj"><strong>Production :</strong> OUCH PROD, label Minouch</span><span class="proj">Merci également à l'Espace Palante à Hillion (22).</span></p>
+      </div>
+      <div class="photos" style="margin:0">
+        <img src="img/lgo-lanterne.jpg" alt="Les Graines Oubliées : silhouette à la lanterne" loading="lazy">
+        <img src="img/lgo-claviers.jpg" alt="Ladylike Lily aux claviers sur scène, devant un décor de ville en ombres" loading="lazy">
+        <img src="img/lgo-colibri.jpg" alt="Les Graines Oubliées : la petite fille et le colibri en théâtre d'ombres" loading="lazy">
+      </div>
+      <div style="margin:0">
+        <h4 class="keyfig" style="margin-top:0">Chiffres clefs</h4>
+        <div class="stats" style="--c:var(--turquoise);grid-template-columns:1fr">
+          <div class="stat"><b>100</b><span>représentations (depuis le 28/10/2026)</span></div>
+          <div class="stat"><b>50+</b><span>villes en France</span></div>
+          <div class="stat"><b>15 000</b><span>spectateurs</span></div>
+          <div class="stat"><b>1 400</b><span>albums vendus</span></div>
+        </div>
+      </div>
+      <div style="margin:0">
+        <h4 class="keyfig" style="margin-top:0">La presse en parle</h4>
+        <p class="quote" style="--c:var(--jaune)">« Un superbe conte poétique. » <cite>France TV · Okoo-Koo</cite></p>
+      <p class="quote" style="--c:var(--turquoise)">« Avec ses très jolies chansons et ses jeux d'ombres, Ladylike Lily fait rêver les enfants. » <cite>France 4</cite></p>
+      <p class="quote" style="--c:var(--rose)">« Une épopée végétale fantastique au charme onirique. » <cite>Radio France</cite></p>
+      <p class="quote" style="--c:var(--jaune)">« Les enfants sont conquis, les parents complètement séduits. » <cite>France 3</cite></p>
+      <p class="quote" style="--c:var(--turquoise)">« Un voyage enchanteur, hors du temps et envoûtant. » <cite>France Bleu</cite></p>
+      <p class="quote" style="--c:var(--rose)">« Un spectacle engagé, sensé et sensoriel. » <cite>Ouest-France</cite></p>
+      </div>
+      <div class="card" style="--c:var(--rose)">
+        <small>Nouvelle création · janvier 2028</small>
+        <h3 style="font-size:3.4rem;font-weight:700;line-height:1.1">Mon Immensité</h3>
+        <p>Spectacle de théâtre hybride mêlant marionnette, théâtre d'objets, musique live et vidéo. Un espace scénique en strates, pensé autour du papier blanc, des ombres et de la lumière. Création au Théâtre de Charleville-Mézières (TCM) en janvier 2028, avec résidences et actions de médiation.</p>
+        <h4 class="keyfig">Coproducteurs</h4>
+        <p><span class="proj"><strong>Théâtre de Charleville-Mézières (TCM)</strong></span><span class="proj"><strong>Agen</strong></span><span class="proj"><strong>Safran</strong></span></p>
+        <p>Pré-achats et coproductions en cours.</p>
+        <span class="tag">Marionnette</span><span class="tag">Théâtre d'objets</span><span class="tag">Musique live</span><span class="tag">Vidéo</span>
+      </div>
+      <figure class="bigphoto">
+      <img src="img/mon-immensite.jpg" alt="Mon Immensité : silhouette au plateau devant un fond bleu en pointillés" loading="lazy" style="object-position:center 75%">
+    </figure>
+      <div class="photos" style="margin:0">
+        <img src="img/mi-loup.jpg" alt="Mon Immensité : silhouette et lumière bleue" loading="lazy">
+        <img src="img/mi-tour.jpg" alt="Mon Immensité : une tour de papier dans la lumière" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LABEL MINOUCH -->
+<section id="minouch" style="--c:var(--orange)">
+  <div class="wrap">
+    <h2>Label Minouch</h2>
+    <p class="intro">Le label jeune public MINOUCH, créé en 2022. Un catalogue musical destiné au jeune public et aux familles, à la croisée de la chanson, des musiques actuelles et des univers visuels. Des projets singuliers, portés par la qualité artistique, la création et la transmission.</p>
+    <img src="img/logo-minouch.jpg" alt="Minouch, le label jeune public d'OUCH PROD" style="display:block;width:min(100%,760px);height:auto;margin:0 auto 3rem">
+    <div class="grid">
+      <div class="card" style="--c:var(--turquoise)"><img src="img/pochette-graines-oubliees.jpg" alt="Pochette de l'album Les Graines Oubliées" loading="lazy"><small>Sortie le 3 mars 2023</small><h3>Ladylike Lily · Les Graines Oubliées</h3><p>Un voyage musical et poétique au cœur du vivant, entre chansons et paysages sonores.</p><p style="margin-top:.6rem"><a href="https://www.youtube.com/playlist?list=PLhPZXHlq0BqN2vjHEIUe6mu2-HJwZfDG5" target="_blank" rel="noopener"><strong>Écouter sur YouTube</strong></a></p></div>
+      <div class="card" style="--c:var(--bleu)"><img src="img/pochette-pluie-automne.jpg" alt="Pochette du single La Pluie d'Automne" loading="lazy"><small>Sortie le 6 octobre 2023 · single</small><h3>Ladylike Lily · La Pluie d'Automne</h3><p>Un single pour traverser les émotions de l'enfance et les saisons de la vie.</p></div>
+      <div class="card" style="--c:var(--vert)"><img src="img/pochette-gardiens-foret.jpg" alt="Pochette de Les Gardiens de la forêt, Anne Darban" loading="lazy"><small>Sortie le 27 octobre 2023</small><h3>Anne Darban · Les Gardiens de la forêt</h3><p>Des chansons pour explorer, protéger et célébrer la nature, avec tendresse et fraîcheur.</p><p style="margin-top:.6rem"><a href="https://www.youtube.com/playlist?list=PLhPZXHlq0BqOSo0otG7_cnv-pGpSSWqtr" target="_blank" rel="noopener"><strong>Écouter sur YouTube</strong></a></p></div>
+      <div class="card" style="--c:var(--rose)"><img src="img/pochette-lise.jpg" alt="Lise for Kids : Chœurs d'oiseaux" loading="lazy"><small>Sortie 2026 · réédition 2027</small><h3>Lise for Kids · Chœurs d'oiseaux</h3><p>Avec les oiseaux comme compagnons, un voyage musical pour émerveiller les enfants.</p></div>
+      <div class="card" style="--c:var(--vert)"><img src="img/pochette-bienvenue.jpg" alt="Pochette de Bienvenue, Anne Darban" loading="lazy"><h3>Anne Darban · Bienvenue</h3></div>
+    </div>
+    <h4 class="keyfig">Prochaines sorties</h4>
+    <p><span class="proj">« First Flight » de Robin Foster et Ladylike Lily : réalisation du vidéoclip.</span><span class="proj">« Mon Immensité » de Ladylike Lily : album du spectacle, sortie en janvier 2028.</span></p>
+  </div>
+</section>
+
+<!-- MEDIATION -->
+<section id="mediation" class="alt" style="--c:var(--turquoise)">
+  <div class="wrap">
+    <h2>Médiation culturelle</h2>
+    <p class="intro">Transmettre, créer avec les enfants et les publics : des temps de rencontre et de création pour explorer la musique, le théâtre d'ombres et les arts visuels. Des expériences sensibles et participatives qui invitent petits et grands à expérimenter, imaginer et créer ensemble.</p>
+    <figure class="bigphoto">
+      <img src="img/atelier-1.jpg" alt="Atelier d'ombres : Ladylike Lily échange avec un groupe d'enfants devant la scène" loading="lazy">
+    </figure>
+    <div class="grid" style="margin-top:2rem">
+      <div class="card" style="--c:var(--turquoise)">
+        <img class="wide" src="img/atelier-ombres-oiseau.jpg" alt="Atelier de théâtre d'ombres avec un enfant" loading="lazy">
+        <small>Atelier à deux voix · en lien avec <em style="font-style:normal">Les Graines Oubliées</em></small>
+        <h3>Ombres et plantes tinctoriales</h3>
+        <p>Avec Rozenn Gouret (couturière, herboriste, spécialiste des plantes tinctoriales) et Ladylike Lily (musicienne, illustratrice, marionnettiste). Fabriquer des encres végétales, peindre, créer sa marionnette d'ombre en papier et l'animer dans la lumière.</p>
+        <span class="tag">Écoles</span><span class="tag">Parents-enfants</span>
+        <p style="margin-top:1rem"><a href="https://www.youtube.com/shorts/W4UDPIz21FA" target="_blank" rel="noopener"><strong>Voir la vidéo de l'atelier</strong></a></p>
+      </div>
+      <div class="card" style="--c:var(--jaune)">
+        <img class="wide" src="img/atelier-ombres-1.jpg" alt="Atelier d'ombres autour de Mon Immensité" loading="lazy">
+        <small>Autour de <em style="font-style:normal">Mon Immensité</em> · médiathèque d'Yffiniac · janvier à mars 2027</small>
+        <h3>Trois temps de création avec les familles</h3>
+        <p>Parcours sensoriel et sonore, atelier plastique (construction collective d'une citadelle lumineuse), cabane à rêves (collecte de récits et d'imaginaires), atelier d'ombres. Ces ateliers nourrissent l'exposition « Refuges ».</p>
+      </div>
+    </div>
+    <div class="photos">
+      <img src="img/atelier-2.jpg" alt="Atelier : une mère guide un enfant pour découper du papier vert" loading="lazy">
+      <img src="img/atelier-3.jpg" alt="Atelier : dessin de feuilles sur papier vert" loading="lazy">
+      <img src="img/atelier-4.jpg" alt="Atelier des ombres : une enfant montre sa marionnette découpée" loading="lazy">
+      <img src="img/atelier-5.jpg" alt="Atelier : un enfant dessine un lapin sur du carton" loading="lazy" style="aspect-ratio:16/9">
+      <img src="img/atelier-6.jpg" alt="Atelier : des enfants animent leurs marionnettes d'ombre dans la lumière" loading="lazy" style="aspect-ratio:16/9">
+      <img src="img/atelier-cosmos.jpg" alt="Atelier d'ombres : enfants et marionnettes d'ombre sur le thème du cosmos" loading="lazy" style="aspect-ratio:16/9">
+    </div>
+  </div>
+</section>
+
+<!-- EXPOSITIONS -->
+<section id="expositions" style="--c:var(--jaune)">
+  <div class="wrap">
+    <h2>Expositions</h2>
+    <p class="intro">Des expositions sensibles et immersives, où papiers, lumières, sons et ombres invitent à la rêverie. Des installations pensées pour les petits et les grands, en lien avec les spectacles et les albums.</p>
+    <div class="grid" style="grid-template-columns:1fr">
+      <div class="card" style="--c:var(--bleu)">
+        <small>Novembre – décembre 2027 · médiathèque d'Yffiniac</small>
+        <h3 style="font-weight:700">Refuges</h3>
+        <p>Exposition en lien avec le spectacle <em style="font-style:normal">Mon Immensité</em>. Une ville imaginaire peuplée de tours, d'arbres et de refuges, traversée par des voix, des souvenirs et des morceaux de musique. Une invitation à ralentir, à se raconter et à imaginer son propre refuge.</p>
+        <img src="img/refuges-affiche.jpg" alt="Refuges : affiche de l'exposition, ville de papier découpé sous un ciel bleu" loading="lazy" style="max-width:520px;aspect-ratio:auto;margin:1.2rem 0">
+        <div class="photos" style="margin-top:0">
+          <img src="img/refuges-2.jpg" alt="Refuges : tours de papier bleu et lumière" loading="lazy">
+          <img src="img/refuges-3.jpg" alt="Refuges : tour et ville de papier découpé" loading="lazy">
+        </div>
+      </div>
+      <div class="card" style="--c:var(--turquoise)">
+        <h3 style="font-weight:700">Les Graines Oubliées <span style="font-weight:400">de Ladylike Lily</span></h3>
+        <p>L'exposition « Les Graines Oubliées » de Ladylike Lily est une collection d'œuvres en papiers découpés et teints par l'artiste musicienne plasticienne avec des encres et peintures végétales. On y retrouve les décors du spectacle musical d'ombres et de l'album éponyme.</p>
+        <p>Le spectateur se balade entre les différentes œuvres de calques superposés et plonge dans un univers coloré et sensible. Une exposition qui fait appel à notre enfant intérieur et qui invite à la rêverie, à l'imagination et au voyage. La matière est figée mais incroyablement vivante, faite de fibres, de plantes et de matières recyclées : une invitation à célébrer le vivant.</p>
+        <h4 class="keyfig">Technique</h4>
+        <p>Ladylike Lily dessine puis découpe les tableaux en profondeur, avant d'y ajouter de l'encre sur la matière imbibée d'eau. Une technique qu'elle transmet volontiers aux enfants lors d'ateliers. Entre deux représentations, elle propose des temps de création libres de tableaux en encres, à la manière de son spectacle d'ombres.</p>
+        <div class="photos" style="margin:1.2rem 0">
+          <img src="img/expo-lgo-1.jpg" alt="Les Graines Oubliées : œuvre en papiers découpés verts" loading="lazy" style="aspect-ratio:4/3">
+          <img src="img/expo-lgo-2.jpg" alt="Les Graines Oubliées : tableau d'encres et papiers découpés" loading="lazy" style="aspect-ratio:4/3">
+          <img src="img/expo-lgo-3.jpg" alt="Les Graines Oubliées : oiseau en papiers découpés" loading="lazy" style="aspect-ratio:4/3">
+        </div>
+        <p style="margin-top:1rem"><a href="https://www.youtube.com/watch?v=LONVqEwceo4" target="_blank" rel="noopener"><strong>Voir les étapes de fabrication de l'exposition</strong></a></p>
+        <h4 class="keyfig">Lieux</h4>
+        <span class="proj">Antipode</span><span class="proj">Médiathèque d'Yffiniac (décembre 2023 – janvier 2024)</span><span class="proj">Le Rheu (13 mars – 17 avril 2024)</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AUDIOVISUEL -->
+<section id="audiovisuel" class="alt" style="--c:var(--bleu)">
+  <div class="wrap">
+    <h2>Audiovisuel</h2>
+    <p class="intro">OUCH PROD produit et Ladylike Lily réalise les images qui font voyager les artistes : clips, teasers et captations de festivals.</p>
+    <div class="grid" style="grid-template-columns:1fr;gap:3.2rem">
+      <div class="card">
+        <small>Clip · Robin Foster &amp; Ladylike Lily</small><h3>First Flight</h3>
+        <p>Tourné de nuit au Cap Fréhel (Côtes-d'Armor) et à Port Morvan, à Planguénoual. Réalisation Orianne Marsilli, prises de vues Matthieu Tillaut. Production OUCH PROD. <em style="font-style:normal">First Flight</em> est issu de l'album <em style="font-style:normal">Northwesterns</em> de Robin Foster chez Roy Music.</p>
+        <div class="photos" style="margin:1rem 0 0">
+        <img src="img/first-flight-1.jpg" alt="Clip First Flight : ciel et mer au crépuscule" loading="lazy">
+        <img src="img/first-flight-2.jpg" alt="Clip First Flight : une femme à la lanterne face à la mer" loading="lazy">
+        <img src="img/first-flight-3.jpg" alt="Clip First Flight : portrait dans la lumière bleue" loading="lazy">
+      </div>
+      </div>
+      <div class="card">
+        <small>Clip · 2023</small><h3>Le ciel en émoi</h3>
+        <p>Ladylike Lily. Clip d'animation en papiers découpés, produit par OUCH PROD.</p>
+        <a class="vthumb" href="https://www.youtube.com/watch?v=aG0O2fEkV88" target="_blank" rel="noopener" style="background-image:url(img/ciel-en-emoi.jpg)" aria-label="Lire la vidéo : Le ciel en émoi - Ladylike Lily"><span class="play"></span></a>
+        <p style="margin-top:1rem"><a href="https://www.youtube.com/watch?v=aG0O2fEkV88" target="_blank" rel="noopener"><strong>Voir le clip</strong></a></p>
+      </div>
+      <div class="photos">
+        <img src="img/ciel-en-emoi-1.jpg" alt="Le ciel en émoi : silhouette d'une petite fille dans la forêt de papier" loading="lazy">
+        <img src="img/ciel-en-emoi-2.jpg" alt="Le ciel en émoi : cœur en papier découpé" loading="lazy">
+        <img src="img/ciel-en-emoi-3.jpg" alt="Le ciel en émoi : visage endormi entouré de feuillages" loading="lazy">
+      </div>
+      <div class="card">
+        <small>Clip · 2023</small><h3>Paris-Melbourne</h3>
+        <p>Sophie Maurin, extrait de l'album <em style="font-style:normal">Longitudes</em>.</p>
+        <div class="photos" style="margin:1rem 0 0">
+        <img src="img/paris-melbourne-1.jpg" alt="Clip Paris-Melbourne : silhouette au hublot" loading="lazy">
+        <img src="img/paris-melbourne-2.jpg" alt="Clip Paris-Melbourne : une main dans le hublot" loading="lazy">
+        <img src="img/paris-melbourne-3.jpg" alt="Clip Paris-Melbourne : un corps en suspension dans les nuages" loading="lazy">
+      </div>
+      </div>
+      <div class="card">
+        <small>Clip · 2024</small><h3>Plat du jour</h3>
+        <p>Maxwell Farrington &amp; Le Superhomard (label Talitre).</p>
+        <div class="photos" style="margin:1rem 0 0">
+        <img src="img/plat-du-jour-a.jpg" alt="Clip Plat du jour : le chef d'orchestre et le thérémine en papier découpé" loading="lazy">
+        <img src="img/plat-du-jour-b.jpg" alt="Clip Plat du jour : peigne en papier découpé dans la lumière" loading="lazy">
+        <img src="img/plat-du-jour-c.jpg" alt="Clip Plat du jour : fourchettes et papiers découpés" loading="lazy">
+      </div>
+      </div>
+      <div class="card">
+        <small>Captations &amp; teasers</small><h3>Festivals et compagnies</h3>
+        <p>Compagnie Maebee (Zarbigorno, Johnny est à l'ombre), Théâtre des Tabarales (Chouette).</p>
+        <div class="photos" style="margin:1rem 0 0">
+        <img src="img/tournage-ouchprod.jpg" alt="Tournage OUCH PROD" loading="lazy">
+        <img src="img/tournage-lily.jpg" alt="Tournage avec Ladylike Lily" loading="lazy">
+      </div>
+      </div>
+    </div>
+    <h4 class="keyfig">Production d'autres projets</h4>
+    <p> <em style="font-style:normal">Au lit ! Baby</em> (Blandine Peis, forme éphémère pour les 0-2 ans, La Carène, Brest), <em style="font-style:normal">Lise for Kids</em> (disque et spectacle live), <em style="font-style:normal">Anne Darban : Les Gardiens de la forêt</em> (conte-album, livre-spectacle).</p>
+  </div>
+</section>
+
+<!-- TEASERS -->
+<section id="teasers" style="--c:var(--bleu)">
+  <div class="wrap">
+    <h2>Teasers</h2>
+    <p class="intro">OUCH PROD réalise les teasers de festivals et d'événements culturels.</p>
+    <div class="grid" style="grid-template-columns:1fr;gap:3.2rem">
+      <div class="card">
+        <small>Teasers · 2025 · 2026 · 2027</small>
+        <h3>Festival Marionnet'IC</h3>
+        <a class="vthumb" href="https://www.youtube.com/watch?v=r6KKiMSbtSo" target="_blank" rel="noopener" style="background-image:url(img/marionnetic.jpg)" aria-label="Lire la vidéo : Festival Marionnet'IC 2026"><span class="play"></span></a>
+        <p style="margin-top:1rem"><a href="https://www.youtube.com/watch?v=r6KKiMSbtSo" target="_blank" rel="noopener"><strong>Voir le teaser 2026</strong></a></p>
+      </div>
+      <div class="card">
+        <small>Teaser · 2026</small>
+        <h3>Houle Sentimentale</h3>
+        <a class="vthumb" href="https://www.youtube.com/watch?v=jb8aOngYPv8" target="_blank" rel="noopener" style="background-image:url(img/houle-sentimentale.jpg)" aria-label="Lire la vidéo : Houle Sentimentale 2026"><span class="play"></span></a>
+        <p style="margin-top:1rem"><a href="https://www.youtube.com/watch?v=jb8aOngYPv8" target="_blank" rel="noopener"><strong>Voir le teaser</strong></a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TERRITOIRE -->
+<section id="territoire">
+  <div class="wrap">
+    <p class="kicker" style="color:var(--turquoise)">Ancrage local</p>
+    <h2>Créer ici, avec le territoire</h2>
+    <p class="intro">Des collaborations artistiques et techniques qui s'ancrent dans l'agglomération de Saint-Brieuc et plus largement sur le territoire des Côtes-d'Armor.</p>
+    <div class="places">
+      <div class="place"><b>Plédran</b><span>Siège de l'association. Écriture de <em style="font-style:normal">Mon Immensité</em>.</span></div>
+      <div class="place"><b>Yffiniac</b><span>Direction artistique, création, régie et création sonore. Médiathèque : expositions et ateliers.</span></div>
+      <div class="place"><b>Binic / Étables-sur-Mer</b><span>Festival Marionnet'ic : trois années de collaboration audiovisuelle (captations, teasers, restitutions).</span></div>
+      <div class="place"><b>Étables-sur-Mer</b><span>Kim Dutour / Cie Maebee : marionnette, construction et collaboration sur <em style="font-style:normal">Mon Immensité</em>.</span></div>
+      <div class="place"><b>Pordic</b><span>La Ville Robert : coproduction, résidences et diffusion des <em style="font-style:normal">Graines Oubliées</em>.</span></div>
+      <div class="place"><b>Hillion</b><span>Espace Palante : résidences de création des <em style="font-style:normal">Graines Oubliées</em>.</span></div>
+      <div class="place"><b>Saint-Brieuc</b><span>Réalisation du clip « Plat du jour » (Maxwell Farrington), label Talitre.</span></div>
+      <div class="place"><b>Trégueux</b><span>« À la une », Lucie Jacquemart : captation vidéo.</span></div>
+      <div class="place"><b>Langueux / Lamballe</b><span>Christelle Philippe, Cie Les Voyageurs Immobiles : teaser de l'atelier danse, tournage « Moi émoi » (novembre 2026).</span></div>
+      <div class="place"><b>Erquy / Pléneuf-Val-André</b><span>Festival Houle Sentimentale : captation vidéo du festival 2026.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PARCOURS -->
+<section id="parcours" class="alt" style="--c:var(--rose)">
+  <div class="wrap">
+    <p class="kicker">Panorama 2020 – 2028</p>
+    <h2>Le parcours d'OUCH PROD</h2>
+    <ol class="timeline" style="margin-top:1.6rem">
+      <li style="--c:var(--rose)"><b>2020</b><span class="proj">Création d'OUCH PROD, association loi 1901.</span></li>
+      <li style="--c:var(--turquoise)"><b>2021 – 2022</b><span class="proj">Création du spectacle et de l'album <em style="font-style:normal">Les Graines Oubliées</em> : résidences en 2022, enregistrement de l'album en octobre 2022.</span><span class="proj">Création du label Minouch.</span></li>
+      <li style="--c:var(--jaune)"><b>2023</b><span class="proj">Sortie de l'album <em style="font-style:normal">Les Graines Oubliées</em> (3 mars) et première tournée : 41 représentations dans l'année.</span><span class="proj">Clip <em style="font-style:normal">Paris-Melbourne</em>.</span><span class="proj">Sortie de <em style="font-style:normal">La Pluie d'Automne</em> (6 octobre).</span><span class="proj">Exposition à Yffiniac (décembre).</span></li>
+      <li style="--c:var(--orange)"><b>2024</b><span class="proj">Création d'<em style="font-style:normal">Au lit ! Baby</em>, forme éphémère pour les 0-2 ans (La Carène, Brest).</span><span class="proj">Exposition au Rheu.</span><span class="proj">Clip <em style="font-style:normal">Plat du jour</em>.</span><span class="proj">Poursuite de la tournée.</span></li>
+      <li style="--c:var(--bleu)"><b>2025 – 2026</b><span class="proj">Clip <em style="font-style:normal">First Flight</em> de Robin Foster.</span><span class="proj">Captations et teasers (Marionnet'IC, Houle Sentimentale).</span><span class="proj">100<sup>e</sup> représentation des <em style="font-style:normal">Graines Oubliées</em> (28/10/2026).</span></li>
+      <li style="--c:var(--rose)"><b>2027 – 2028</b><span class="proj">Écriture, répétitions et création de <em style="font-style:normal">Mon Immensité</em>. Résidences.</span><span class="proj">Exposition <em style="font-style:normal">Refuges</em>.</span><span class="proj">Médiation.</span><span class="proj">Six représentations des <em style="font-style:normal">Graines Oubliées</em>.</span></li>
+    </ol>
+    <div style="margin-top:2rem">
+      <h4 class="keyfig">Nos valeurs</h4>
+      <p>Des récits sensibles et poétiques. Une création engagée pour le vivant. Une attention particulière à l'enfance et à la transmission. Des projets ancrés dans les territoires et le partage.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <div class="wrap">
+    <p class="kicker">Nous contacter</p>
+    <h2>Parlons de votre projet</h2>
+    <div class="grid">
+      <div class="card"><small>Contact général</small><h3>OUCH PROD</h3><p><a href="mailto:ouchprodasso@gmail.com">ouchprodasso@gmail.com</a><br>Pour recevoir nos dossiers de présentation, écrivez-nous.</p></div>
+      <div class="card"><small>Production &amp; administration</small><h3>Caroline Coudert</h3><p><a href="mailto:caroline.ouchprod@gmail.com">caroline.ouchprod@gmail.com</a><br>06 18 59 35 56</p></div>
+      <div class="card"><small>Diffusion</small><h3>Marion Long · Un Deux Un Deux</h3><p><a href="mailto:marion@undeuxundeux.com">marion@undeuxundeux.com</a><br>06 30 48 55 06</p></div>
+      <div class="card"><small>Artistique</small><h3>Orianne Marsilli · Ladylike Lily</h3><p><a href="mailto:ladylikelily@gmail.com">ladylikelily@gmail.com</a><br>06 50 76 63 70</p></div>
+      <div class="card"><small>Technique</small><h3>Julien Ravary · Régie</h3><p><a href="mailto:julien.ravary@gmail.com">julien.ravary@gmail.com</a><br>06 71 59 38 16</p></div>
+    </div>
+
+    <h4 class="keyfig">Suivre OUCH PROD</h4>
+    <p><a href="https://www.youtube.com/@labelminouch1176" target="_blank" rel="noopener"><strong>YouTube · Label Minouch</strong></a></p>
+  </div>
+</section>
+
+<section id="mentions" style="padding:2.5rem 1.25rem">
+  <div class="wrap">
+    <h4 class="keyfig">Mentions légales</h4>
+    <p style="font-size:.95rem"><strong>Éditeur du site :</strong> association OUCH PROD, loi 1901, Plédran (Côtes-d'Armor). Contact : <a href="mailto:ouchprodasso@gmail.com">ouchprodasso@gmail.com</a>. Les photographies, textes et vidéos sont la propriété de leurs auteurs et ne peuvent être reproduits sans autorisation. Ce site ne dépose pas de cookies de suivi et ne collecte aucune donnée personnelle.</p>
+  </div>
+</section>
+
+<section class="credits" style="padding:2.5rem 1.25rem">
+  <div class="wrap">
+    <h4 class="keyfig">Crédits photos</h4>
+    <p style="font-size:.95rem">Affiche des Graines Oubliées : © Gwendal Le Flem · Mon Immensité : © Julien Ravary · Images du clip Paris-Melbourne : © Sophie Maurin · Atelier d'ombres « cosmos » : © Claire Huteau · Ateliers d'ombres : © Stephanie Durbic</p>
+  </div>
+</section>
+
+<footer>© OUCH PROD · Plédran (Côtes-d'Armor) · Association loi 1901 · <a href="https://www.ladylikelily.fr">ladylikelily.fr</a></footer>
+
+<div class="bubbles" aria-hidden="true"></div>
+<script>
+(function(){
+  var c=document.querySelector('.bubbles'),cols=['#fc0202','#fdbc03','#0199cb'],COL=1100;
+  function build(){
+    c.innerHTML='';
+    var vw=window.innerWidth;
+    for(var i=0;i<16;i++){
+      var sz=12+Math.random()*28, x=Math.random()*(vw-sz);
+      var b=document.createElement('span');
+      b.className='bubble';
+      b.style.cssText='width:'+sz+'px;height:'+sz+'px;left:'+x+'px;top:'+(Math.random()*100)+'%;background:'+cols[i%3]+
+        ';--dx:'+((Math.random()-.5)*70)+'px;--dy:'+((Math.random()-.5)*340)+'px;animation-duration:'+(2.2+Math.random()*2.8)+'s;animation-delay:-'+(Math.random()*5)+'s';
+      c.appendChild(b);
+    }
+  }
+  build(); var t; window.addEventListener('resize',function(){clearTimeout(t);t=setTimeout(build,200);});
+})();
+</script>
+<script>
+(function(){
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches||!window.matchMedia('(hover:hover)').matches) return;
+  var cols=['#fc0202','#fdbc03','#0199cb','#fc0202','#fdbc03'],sizes=[16,12,14,9,11],lerp=[.05,.035,.025,.018,.012],f=[],mx=-100,my=-100,seen=false;
+  cols.forEach(function(c,i){
+    var e=document.createElement('span');e.className='follower';
+    e.style.width=e.style.height=sizes[i]+'px';e.style.background=c;
+    document.body.appendChild(e);f.push({e:e,x:-100,y:-100,k:lerp[i],s:sizes[i]});
+  });
+  window.addEventListener('mousemove',function(ev){mx=ev.clientX;my=ev.clientY;if(!seen){seen=true;f.forEach(function(o){o.x=mx;o.y=my;o.e.style.opacity=.85;});}});
+  document.addEventListener('mouseleave',function(){f.forEach(function(o){o.e.style.opacity=0;});seen=false;});
+  (function tick(){
+    f.forEach(function(o,i){o.x+=(mx+(i%2?14:-14)*(i+1)*.5-o.x)*o.k;o.y+=(my+10+i*9-o.y)*o.k;o.e.style.transform='translate('+(o.x-o.s/2)+'px,'+(o.y-o.s/2)+'px)';});
+    requestAnimationFrame(tick);
+  })();
+})();
+</script>
+</body>
+</html>
